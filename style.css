@@ -1,0 +1,446 @@
+/* =================================================================
+   1. CORE BASICS & PALETTE SCHEMES (Visual Enhancements)
+   ================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+    --primary-color: #2b4c7e;       /* Deep corporate blue accent color */
+    --accent-color: #e63946;        /* Bright striking warning/CTA line */
+    --dark-neutral: #1d3557;        /* Clean baseline color space */
+    --light-neutral: #f8f9fa;       /* Off-white canvas grids formatting */
+    --text-primary: #333333;
+    --text-muted: #666666;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--text-primary);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* =================================================================
+   2. ACCESSIBLE HEADER NAVIGATION BAR
+   ================================================================= */
+header {
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--dark-neutral);
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-neutral);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+/* UI/UX Feature: Animated underline indicator link hover effects */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* =================================================================
+   3. HERO ABOUT COMPONENT DESIGN
+   ================================================================= */
+.hero-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    color: var(--dark-neutral);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.9rem 2rem;
+    font-weight: 700;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(43, 76, 126, 0.15);
+    transition: var(--transition-smooth);
+}
+
+/* UI/UX Feature: Micro-interaction transformation shift state on hover */
+.btn-primary:hover {
+    background-color: var(--dark-neutral);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(29, 53, 87, 0.25);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 8px solid var(--light-neutral);
+}
+
+/* =================================================================
+   4. SHOWCASE GRID CONFIGURATION (Foundational Portfolio Site CSS)
+   ================================================================= */
+.portfolio-section {
+    background-color: var(--light-neutral);
+    padding: 6rem 2rem;
+}
+
+.portfolio-section h2, .contact-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--dark-neutral);
+    margin-bottom: 4rem;
+    font-weight: 800;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+/* UI/UX Feature: Card expansion scale and border-top hover glow accent shifts */
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card-image-box img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+.portfolio-card:hover .card-image-box img {
+    transform: scale(1.03);
+}
+
+.card-content {
+    padding: 2.2rem;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    color: var(--dark-neutral);
+    margin-bottom: 0.8rem;
+}
+
+.card-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.6rem 1.4rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* UI/UX Feature: CSS Powered Attr Tooltips mechanism mappings */
+.portfolio-card[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    background-color: var(--dark-neutral);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-smooth);
+}
+
+.portfolio-card:hover::after {
+    opacity: 0.9;
+}
+
+/* =================================================================
+   5. CONTACT & FORM ARCHITECTURE
+   ================================================================= */
+.contact-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.styled-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-row label {
+    font-weight: 700;
+    color: var(--dark-neutral);
+    font-size: 0.95rem;
+}
+
+.form-row input, .form-row textarea {
+    padding: 0.85rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+/* Form border accent highlight on active elements focus states */
+.form-row input:focus, .form-row textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(43, 76, 126, 0.1);
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: var(--transition-smooth);
+}
+
+.btn-submit:hover {
+    background-color: var(--dark-neutral);
+}
+
+/* =================================================================
+   6. INTERACTIVE MODAL OVERLAY COMPONENT
+   ================================================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 53, 87, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: var(--transition-smooth);
+}
+
+.modal-window {
+    background-color: #ffffff;
+    max-width: 550px;
+    width: 90%;
+    padding: 3rem;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.3s ease-out;
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.close-modal-btn:hover {
+    color: var(--accent-color);
+}
+
+#modalTitle {
+    color: var(--dark-neutral);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+#modalBody {
+    color: var(--text-muted);
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    display: none !important;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+footer {
+    background-color: var(--dark-neutral);
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    font-size: 0.9rem;
+}
+
+/* =================================================================
+   7. RESPONSIVE MEDIA BREAKPOINTS (Responsive Design Suggesions)
+   ================================================================= */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .profile-pic {
+        width: 300px;
+        height: 300px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        max-width: 650px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .hero-section, .portfolio-section, .contact-section {
+        padding: 4rem 1.2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
