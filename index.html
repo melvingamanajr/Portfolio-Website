@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Styles | Professional Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="nav-container">
+            <div class="logo">Alex<span>Styles</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Crafting Distinct Visual Identities</h1>
+                    <p>Hi, I'm Alex Styles. I am a passionate UI/UX designer and front-end developer dedicated to building functional, accessible, and high-impact digital experiences.</p>
+                    <a href="#portfolio" class="btn-primary">View My Work</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500&h=500&fit=crop" 
+                         alt="Professional headshot profile portrait of Alex Styles, Lead UI/UX Designer" 
+                         class="profile-pic">
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section">
+            <h2>Featured Projects</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card" data-tooltip="Click to view case study details">
+                    <div class="card-image-box">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=500&h=350&fit=crop" alt="Screenshot preview mockup of a minimalist e-commerce digital storefront website interface">
+                    </div>
+                    <div class="card-content">
+                        <h3>Aura Retail Platform</h3>
+                        <p>A completely reimagined storefront experience focusing on fluid user journeys, clean micro-interactions, and swift mobile checkout loops.</p>
+                        <button class="btn-secondary modal-trigger" onclick="openModal('Aura Retail Platform', 'The Aura project required building an incredibly optimized mobile-first commerce pipeline. By leaning heavily on CSS Grid architectures and performance minification strategies, we achieved an 80% improvement in user interaction loops and retention metrics across native web viewports.')">Read Case Study</button>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-tooltip="Click to view case study details">
+                    <div class="card-image-box">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=500&h=350&fit=crop" alt="Data presentation dashboard mockup displaying colorful bar graphs and financial analytics grids">
+                    </div>
+                    <div class="card-content">
+                        <h3>Zenith Analytics Hub</h3>
+                        <p>An intricate data analytics visualization engine utilizing clear structural layouts to translate massive enterprise tables into simple, scannable data layers.</p>
+                        <button class="btn-secondary modal-trigger" onclick="openModal('Zenith Analytics Hub', 'For Zenith, the focal point centered tightly around cognitive loading and visual hierarchy layout rules. This single-page workspace handles real-time charts dynamically, ensuring responsive flex columns transform perfectly regardless of layout boundaries.')">Read Case Study</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Let's Collaborate</h2>
+            <div class="contact-container">
+                <form class="styled-form" onsubmit="event.preventDefault(); alert('Message successfully sent! Alex will get back to you shortly.'); this.reset();">
+                    <div class="form-row">
+                        <label for="userName">Your Name</label>
+                        <input type="text" id="userName" required placeholder="John Doe">
+                    </div>
+                    <div class="form-row">
+                        <label for="userEmail">Email Address</label>
+                        <input type="email" id="userEmail" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-row">
+                        <label for="userMessage">Message Details</label>
+                        <textarea id="userMessage" rows="5" required placeholder="Tell me about your project visions..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Alex Styles Design Portfolio. Built for optimal responsiveness and interactivity.</p>
+    </footer>
+
+    <div id="caseStudyModal" class="modal-overlay hidden" onclick="closeModal(event)">
+        <div class="modal-window">
+            <button class="close-modal-btn" onclick="document.getElementById('caseStudyModal').classList.add('hidden')">&times;</button>
+            <h3 id="modalTitle">Project Details</h3>
+            <p id="modalBody">Detailed metrics summary context placeholder goes here.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, text) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerText = text;
+            document.getElementById('caseStudyModal').classList.remove('hidden');
+        }
+        function closeModal(e) {
+            if (e.target.classList.contains('modal-overlay')) {
+                document.getElementById('caseStudyModal').classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
